@@ -7,7 +7,7 @@ from auth_api.models import User
 class ProfileSerializer(ModelSerializer):
     """Serializer for user profiles"""
 
-    class Meta:  # pylint: disable=missing-class-docstring,too-few-public-methods
+    class Meta:  # pylint:disable=missing-class-docstring,too-few-public-methods
         model = User
         fields = ['id', 'email', 'name', 'password']
         extra_kwargs = {
