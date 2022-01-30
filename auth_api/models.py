@@ -48,11 +48,11 @@ class User(AbstractBaseUser):
     def __str__(self):
         return str(self.email)
 
-    def has_perm(self, perm, obj=None):  # pylint:disable=unused-argument
+    def has_perm(self, perm, obj=None):  # pylint:disable=unused-argument,no-self-use
         """Check if the user has a specific permission"""
         return True
 
-    def has_module_perms(self, app_label):  # pylint:disable=unused-argument
+    def has_module_perms(self, app_label):  # pylint:disable=unused-argument,no-self-use
         """Check if the user has access to a specific app"""
         return True
 
