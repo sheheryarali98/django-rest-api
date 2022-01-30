@@ -9,3 +9,4 @@ class ProfileViewSet(ModelViewSet):  # pylint:disable=too-many-ancestors
     """Handle creating, updating and deleting a user profile"""
     queryset = User.objects.all()
     serializer_class = ProfileSerializer
+    http_method_names = ['get', 'post', 'patch', 'delete', 'options']
