@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from auth_api.models import User
 
-from .permissions import IsUpdatingOwnProfile
+from .permissions import IsUpdatingOwnProfileOrAdmin
 from .serializers import ProfileSerializer
 
 
@@ -12,7 +12,7 @@ class ProfileViewSet(ModelViewSet):  # pylint:disable=too-many-ancestors
     """Handle creating, updating and deleting a user profile"""
     permission_classes = [
         IsAuthenticated,
-        IsUpdatingOwnProfile,
+        IsUpdatingOwnProfileOrAdmin,
     ]
     authentication_classes = [JWTAuthentication]
     queryset = User.objects.all()
