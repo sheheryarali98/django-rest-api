@@ -10,10 +10,7 @@ from .serializers import ProfileSerializer
 
 class ProfileViewSet(ModelViewSet):  # pylint:disable=too-many-ancestors
     """Handle creating, updating and deleting a user profile"""
-    permission_classes = [
-        IsAuthenticated,
-        IsUpdatingOwnProfileOrAdmin,
-    ]
+    permission_classes = [IsAuthenticated, IsUpdatingOwnProfileOrAdmin, ]
     authentication_classes = [JWTAuthentication]
     queryset = User.objects.all()
     serializer_class = ProfileSerializer
